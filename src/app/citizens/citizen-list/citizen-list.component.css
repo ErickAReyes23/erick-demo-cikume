@@ -1,0 +1,22 @@
+
+.field-error{
+  border: 1px solid red;
+}
+
+.loadImg{
+  width: 175px;
+  height: 125px;
+}
+
+.all-tooltip {
+  background:darkgreen;
+}
+
+.women-tooltip {
+  background:darkred;
+}
+
+.men-tooltip {
+  background:darkblue;
+}
+
