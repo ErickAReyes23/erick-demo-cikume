@@ -1,3 +1,6 @@
+import { UsersModule } from './users/users.module';
+import { NavBarComponent } from './utilities/header.component';
+import { PageNotFoundComponent } from './page-404.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,22 +12,27 @@ import { CitizensModule } from './citizens/citizens.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CitizenListComponent } from './citizens/citizen-list/citizen-list.component';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [		
     AppComponent,
-  ],
+      HomeComponent,
+      NavBarComponent
+   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService, { delay: 1000 }),
     CitizensModule,
+    UsersModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      {path:'citizen', component:CitizenListComponent},
-      {path:'',redirectTo:'citizen',pathMatch:'full'},
-      {path: '**', redirectTo:'citizen', pathMatch:'full'}
+      {path:'home', component:HomeComponent},
+      {path:'',redirectTo:'home',pathMatch:'full'},
+      {path: '**', component:PageNotFoundComponent}
     ])
    
   ],

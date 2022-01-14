@@ -104,7 +104,7 @@ export class CitizenListComponent implements OnInit{
 
   public getWomenData():void {
     this.actualPage = 1;
-    this.citizens = [];
+    //this.citizens = [];
     this.selectedFilterWoman = true;
     this.selectedFilterMan = false;
     this.allFilter = false;

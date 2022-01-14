@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CitizenListComponent } from './citizen-list/citizen-list.component';
@@ -22,7 +23,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     NgxPaginationModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    MatTooltipModule
+    MatTooltipModule,
+    RouterModule.forChild([
+      {path:'citizen', component:CitizenListComponent}
+    ])
   ],
   exports: [CitizenListComponent]
 })
